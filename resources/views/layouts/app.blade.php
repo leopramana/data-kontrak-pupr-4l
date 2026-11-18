@@ -15,7 +15,7 @@
         <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-3">
             <a href="{{ route('katalog') }}" class="flex items-center gap-3">
                 @if($logo)
-                    <img src="{{ asset($logo) }}" alt="Logo Cicak Studio" class="h-10 w-auto">
+                    <img src="{{ asset($logo) }}" alt="Logo Katalog Data OPD" class="h-10 w-auto">
                 @else
                     <span class="grid size-9 place-items-center rounded-lg bg-brand-600 text-lg font-semibold text-white" aria-hidden="true">KD</span>
                 @endif
