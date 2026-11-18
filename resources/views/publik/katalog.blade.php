@@ -4,7 +4,8 @@
 @section('konten')
     <section class="mb-8">
         <h1 class="text-2xl font-semibold sm:text-3xl">Katalog Data OPD</h1>
-        <p class="mt-2 max-w-2xl text-slate-600">
+        <span class="mt-3 block h-1 w-16 rounded-full bg-orange-500" aria-hidden="true"></span>
+        <p class="mt-3 max-w-2xl text-slate-600">
             Temukan dan unduh data resmi dari perangkat daerah {{ config('katalog.pemda') }}.
             Setiap dataset sudah diperiksa walidata sebelum ditampilkan.
         </p>
@@ -27,7 +28,7 @@
         </form>
     </section>
 
-    <p class="mb-3 text-sm text-slate-500">{{ $datasets->total() }} dataset ditemukan</p>
+    <p class="mb-3 text-sm text-slate-500"><span class="font-semibold text-orange-700">{{ $datasets->total() }}</span> dataset ditemukan</p>
 
     @if($datasets->isEmpty())
         <div class="kartu text-center text-slate-600">
@@ -40,8 +41,8 @@
     @else
         <ul class="grid gap-4 md:grid-cols-2">
             @foreach($datasets as $d)
-                <li class="kartu flex flex-col">
-                    <p class="text-xs font-medium uppercase tracking-wide text-brand-700">{{ $d->opd->nama }}</p>
+                <li class="kartu flex flex-col border-t-4 border-t-orange-400 transition-colors hover:border-orange-300 hover:border-t-orange-500">
+                    <p class="text-xs font-medium uppercase tracking-wide text-orange-700">{{ $d->opd->nama }}</p>
                     <h2 class="mt-1 text-lg font-semibold leading-snug">
                         <a href="{{ route('katalog.show', $d->slug) }}" class="hover:text-brand-700 hover:underline">{{ $d->judul }}</a>
                     </h2>
